@@ -3,7 +3,7 @@ import { CreateAccountDto } from './dto/create-account.dto';
 import { UpdateAccountDto } from './dto/update-account.dto';
 import { AuthGuard } from 'src/guards/auth/auth.guard';
 
-@Controller('contas')
+@Controller('account')
 @UseGuards(AuthGuard)
 export class AccountController {
   @Post()

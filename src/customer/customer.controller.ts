@@ -3,7 +3,7 @@ import { CreateCustomerDto } from './dto/create-customer.dto';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { AuthGuard } from 'src/guards/auth/auth.guard';
 
-@Controller('contas')
+@Controller('customer')
 @UseGuards(AuthGuard)
 export class CustomerController {
   @Post()

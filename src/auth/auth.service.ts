@@ -1,8 +1,13 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { sign, verify } from 'jsonwebtoken';
 
 @Injectable()
 export class AuthService {
+  constructor(configService: ConfigService){
+    this.jwtSecret = configService.get('JWT_SECRET') || this.jwtSecret;
+  }
+
   private readonly jwtSecret = '<seu_segredo_super_secreto>';
 
   generateToken(userId: string): string {
